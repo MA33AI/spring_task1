@@ -1,15 +1,14 @@
-package com.example.demo.spring.components;
+package com.example.demo.spring.components.controller;
 
+import com.example.demo.spring.entitys.enumeration.StatusEmployee;
 import com.example.demo.spring.entitys.Employee;
 import com.example.demo.spring.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.*;
 
 //@CrossOrigin(origins = "http://localhost:8081")
@@ -30,7 +29,7 @@ public class PracticeRestController {
             List<Employee> employees = new ArrayList<Employee>();
 
             if (name == null)
-                employeeRepository.findAll().forEach(employees::add);
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             else
                 employeeRepository.findByName(name).forEach(employees::add);
 

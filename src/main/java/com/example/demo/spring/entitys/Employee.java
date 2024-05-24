@@ -1,6 +1,6 @@
 package com.example.demo.spring.entitys;
 
-import com.example.demo.spring.components.StatusEmployee;
+import com.example.demo.spring.entitys.enumeration.StatusEmployee;
 import jakarta.persistence.*;
 import lombok.*;
 
