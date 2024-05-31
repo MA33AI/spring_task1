@@ -1,13 +1,13 @@
 package com.example.demo.spring.repository;
 
-import com.example.demo.spring.components.StatusEmployee;
-import com.example.demo.spring.entitys.Employee;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.demo.spring.entity.*;
+import org.springframework.data.jpa.repository.*;
 
-import java.util.List;
+import java.util.*;
 
-public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 
-    //List<Employee> findByActive(StatusEmployee statusEmployee);
     List<Employee> findByName(String name);
+
+    Optional<Employee> findById(UUID id);
 }

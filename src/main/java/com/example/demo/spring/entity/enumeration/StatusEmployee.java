@@ -1,4 +1,4 @@
-package com.example.demo.spring.components;
+package com.example.demo.spring.entity.enumeration;
 
 public enum StatusEmployee {
     ACTIVE,
